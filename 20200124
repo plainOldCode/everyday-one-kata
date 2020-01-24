@@ -1,0 +1,22 @@
+> 2020-01-24
+# Kata
+- [[IP Validation]](https://www.codewars.com/kata/515decfd9dcfc23bb6000006/javascript)
+- 난이도 낮음
+
+# Solution
+```javascript
+function isValidIP(str) {
+  return /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/.test(str)
+}
+```
+# Retrospect
+```javascript
+function isValidIP(str) {
+  return str.split('.').filter(function(v){return v==Number(v).toString() && Number(v)<256}).length==4;
+}
+
+const net = require('net');
+const isValidIP = (s) => net.isIP(s);
+```
+정규식으로만 풀 수 있을 줄 알았는데 사실 v==Number(v).toString() 를 보고 놀랐다. 간단하지만 마음에 드는 방식이다.
+그리고 net module 
