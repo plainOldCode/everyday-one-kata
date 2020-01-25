@@ -20,6 +20,6 @@ function bestPractice(value) {
   console.log('wow',value)
 }
 ```"
-blah blah blah
+blah blah blah 감상을 써보자
 
 ```
